@@ -1,0 +1,6 @@
+sudo pip install cython
+mv test.py test.pyx
+
+cython test.pyx --embed
+
+gcc -Os -I /usr/include/python3.8 -o test test.c -lpython3.8 -lpthread -lm -lutil -ldl
